@@ -1,8 +1,10 @@
-/* Imports */
-// this will check if we have a user and set signout link if it exists
 import './auth/user.js';
 
 import { getItems } from './fetch-utils.js';
+
+const createForm = document.querySelector('create-form');
+const addButton = document.querySelector('add-button');
+const listSection = document.querySelector('list-section');
 
 let itemsData = [];
 
@@ -11,10 +13,4 @@ window.addEventListener('load', async () => {
     console.log(itemsData);
 });
 
-/* Get DOM Elements */
-
-/* State */
-
-/* Events */
-
-/* Display Functions */
+addButton.addEventListener('click');
