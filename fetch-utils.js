@@ -33,3 +33,8 @@ export async function getItems() {
     const { data } = await client.from('shopping_list').select('*');
     return data;
 }
+
+export async function createItem(item, quantity) {
+    const { data } = await client.from('shopping_list').insert([{ item, quantity }]);
+    return data;
+}

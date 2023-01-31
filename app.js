@@ -1,10 +1,10 @@
 import './auth/user.js';
 
-import { getItems } from './fetch-utils.js';
+import { getItems, createItem } from './fetch-utils.js';
 
-const createForm = document.querySelector('create-form');
-const addButton = document.querySelector('add-button');
-const listSection = document.querySelector('list-section');
+const createForm = document.querySelector('.create-form');
+const addButton = document.querySelector('.add-button');
+const listSection = document.querySelector('.list-section');
 
 let itemsData = [];
 
@@ -13,4 +13,8 @@ window.addEventListener('load', async () => {
     console.log(itemsData);
 });
 
-addButton.addEventListener('click');
+createForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const newItem = new FormData(createForm);
+    await createItem(newItem.get('item'), newItem.get('quantity'));
+});
