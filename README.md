@@ -21,6 +21,7 @@ If you work on more than one feature at a time, you are guaranteed to multiply y
 -   user should see a list of item
     -   fetch, render, append, display
 -   user should be able to add item
+    -   createItem, link to form
 -   item should update 'is_bought=true' on click
 -   bought items should display differently
 -   user should be able to delete items

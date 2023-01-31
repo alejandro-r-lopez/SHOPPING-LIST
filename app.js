@@ -1,6 +1,7 @@
 import './auth/user.js';
 
 import { getItems, createItem } from './fetch-utils.js';
+import { renderItem } from './render-utils.js';
 
 const createForm = document.querySelector('.create-form');
 const addButton = document.querySelector('.add-button');
@@ -22,14 +23,7 @@ createForm.addEventListener('submit', async (e) => {
 
 function displayItems() {
     for (let item of itemsData) {
-        const itemBox = document.createElement('div');
-        const itemThing = document.createElement('p');
-        const itemQuantity = document.createElement('p');
-
-        itemThing.textContent = item.item;
-        itemQuantity.textContent = item.quantity;
-
-        itemBox.append(itemThing, itemQuantity);
-        listSection.append(itemBox);
+        const newItem = renderItem(item);
+        listSection.append(newItem);
     }
 }
